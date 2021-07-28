@@ -6,7 +6,9 @@ function getDayOfWeek(day) {
 
 export function getDayOfFirstDayOfMonth(year, month) {
   const date = new Date(year, month, 1);
-  return getDayOfWeek(date.getDay())
+  console.log(date.getDay())
+  const result = getDayOfWeek(date.getDay())
+  return result
 }
 
 export function getDayOfLastDayOfMonth(year, month) {
@@ -20,7 +22,8 @@ export function getLastDayOfMonth(year, month) {
 }
 
 export function getPrevDaysOfFirstWeek(day) {
-  return new Array(day - 1).fill('')
+  const result = new Array(day - 1).fill('')
+  return result
 }
 
 export function getNextDaysOfLastWeek(day) {
