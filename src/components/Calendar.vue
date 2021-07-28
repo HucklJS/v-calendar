@@ -1,14 +1,14 @@
 <template>
   <div class="calendar">
     <h2 class="calendar-info">
-      {{this.currentConfig.months[this.currentDate.getMonth()]
+      {{this.config.months[this.currentDate.getMonth()]
       + ' '
       + this.currentDate.getFullYear()}}
     </h2>
     <table class="calendar-table">
       <thead>
         <tr>
-          <th v-for="dayName in currentConfig.weekDays" :key="dayName">
+          <th v-for="dayName in config.weekDays" :key="dayName">
             {{dayName}}
           </th>
         </tr>
@@ -54,14 +54,15 @@
         default: new Date().getFullYear()
           + '-' + (new Date().getMonth() + 1)
           + '-' + new Date().getDate()
+      },
+      config: {
+        type: Object,
+        default: Ru
       }
     },
     computed: {
       currentDate() {
         return new Date(Date.parse(this.date))
-      },
-      currentConfig() {
-        return Ru
       },
       currentDay() {
         const date = this.currentDate
