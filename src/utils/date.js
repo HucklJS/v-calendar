@@ -6,9 +6,7 @@ function getDayOfWeek(day) {
 
 export function getDayOfFirstDayOfMonth(year, month) {
   const date = new Date(year, month, 1);
-  console.log(date.getDay())
-  const result = getDayOfWeek(date.getDay())
-  return result
+  return getDayOfWeek(date.getDay())
 }
 
 export function getDayOfLastDayOfMonth(year, month) {

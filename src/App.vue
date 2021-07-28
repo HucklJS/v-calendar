@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <h1 class="title">Calendar</h1>
+    <input type="text" disabled :value="date">
     <v-calendar
       :date="date"
       @set-new-date="setNewDate"
@@ -23,8 +24,7 @@ export default {
   },
   methods: {
     setNewDate(year, month, day) {
-      this.date = `${year}-${month + 1}-${day}`
-      console.log(this.date)
+      this.date = `${year}-${('0' + (month + 1)).slice(-2)}-${('0' + day).slice(-2)}`
     }
   }
 }
